@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<transactions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="transactions.xsd">
+
+    <transaction>
+        <desc>Salary</desc>
+        <amount>5000</amount>
+        <type>income</type>
+        <category>Salary</category>
+    </transaction>
+
+    <transaction>
+        <desc>Food</desc>
+        <amount>200</amount>
+        <type>expense</type>
+        <category>Food</category>
+    </transaction>
+
+</transactions>

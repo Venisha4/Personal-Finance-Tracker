@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="transactions">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="transaction" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="desc" type="xs:string"/>
+
+              <xs:element name="amount" type="xs:decimal"/>
+
+              <xs:element name="type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="income"/>
+                    <xs:enumeration value="expense"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="category" type="xs:string"/>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎀 Finance Tracker</h1>
+
+    <!-- SUMMARY CARDS -->
+    <div class="cards">
+
+        <div class="card income">
+            <h3>Income</h3>
+            <p>₹ <span id="income">0</span></p>
+        </div>
+
+        <div class="card expense">
+            <h3>Expense</h3>
+            <p>₹ <span id="expense">0</span></p>
+        </div>
+
+        <div class="card balance">
+            <h3>Balance</h3>
+            <p>₹ <span id="balance">0</span></p>
+        </div>
+
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="nav">
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('add')">Add</button>
+        <button onclick="showPage('view')">View</button>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div id="dashboardPage">
+        <h2>Overview 📊</h2>
+        <p>Track your income & expenses easily ✨</p>
+    </div>
+
+    <!-- ADD PAGE -->
+    <div id="addPage" style="display:none;">
+        <div class="form">
+
+            <input type="text" id="desc" placeholder="Description">
+            <input type="number" id="amount" placeholder="Amount">
+
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+
+            <select id="category">
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Shopping</option>
+                <option>Salary</option>
+            </select>
+
+            <button onclick="addTransaction()">+ Add Transaction</button>
+
+        </div>
+    </div>
+
+    <!-- VIEW PAGE -->
+    <div id="viewPage" style="display:none;">
+
+        <div class="filter">
+            <button onclick="filterData('all')">All</button>
+            <button onclick="filterData('income')">Income</button>
+            <button onclick="filterData('expense')">Expense</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="list"></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
